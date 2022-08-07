@@ -10,3 +10,6 @@ CKIRUser가 뭔지 밝혀졌다
 
 ## vscode 기본 터미널 변경하는법  
 Ctrl + Shift + p -> Terminal: Select Default Profile -> Git Bash 선택  
+
+
+## 터미널 단축키
