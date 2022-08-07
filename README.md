@@ -13,3 +13,6 @@ Ctrl + Shift + p -> Terminal: Select Default Profile -> Git Bash 선택
 
 
 ## 터미널 단축키
+```
+Ctrl + `  
+```
