@@ -9,7 +9,16 @@ CKIRUser가 뭔지 밝혀졌다
 마이크로소프트 스토어에서 python 다운받고, vscode, git bash 다운받고 vscode 터미널을 git bash로 설정하고 쓰면 됨  
 
 ## vscode 기본 터미널 변경하는법  
-Ctrl + Shift + p -> Terminal: Select Default Profile -> Git Bash 선택  
+```
+Ctrl + Shift + p
+```
+```
+Terminal: Select Default Profile
+```
+```
+Git Bash
+```
+선택  
 
 
 ## 터미널 단축키
