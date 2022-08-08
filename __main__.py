@@ -1,6 +1,6 @@
-from functions import *
-from classes import *
-from JsonLoader import *
+from src.functions import *
+from src.classes import *
+from src.JsonLoader import *
 
 sayHello()
 sayHelloTo("Jir")
@@ -13,7 +13,7 @@ print(f"후식 {Dessert().getRandom()}?", end = '\n')
 print(random.choice(["개별론데;", "ㄱㄱ"]))
 
 loader = JsonLoader()
-user_info = loader.load("jsons/user_info.json")
+user_info = loader.load("json/user_info.json")
 loader.show()
 
 print(user_info['nickname'])
