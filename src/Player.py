@@ -1,5 +1,5 @@
 import random
-from .JsonLoader import *
+from .JsonManager import *
 
 def codeGenerator():
     alphabets = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ]
@@ -9,14 +9,14 @@ def codeGenerator():
     return code
 
 class Player:
-    def __init__(self):
-        self.nickname = "unnamed"
+    def __init__(self, nickname):
+        self.nickname = nickname
         self.code = codeGenerator()
         self.characters = []
 
     def load(self, nickname):
-        loader = JsonLoader()
-        user_info = loader.load(f"src/users/{nickname}.json")
+        loader = JsonManager()
+        user_info = loader.load(f"users/{nickname}.json")
         # 로드 실패시 users폴더에 새로운 플레이어 정보 생성해서 저장하는 기능 구현 필요
         self.nickname = user_info['nickname']
         self.code = user_info['code']
