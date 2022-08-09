@@ -13,11 +13,3 @@ class JsonManager:
         self.file.close()
 
         return self.json_object
-
-    def make(self, file_name):
-        self.file = open(f"json/{file_name}", 'w')
-        self.json_string = self.file.read()
-        self.json_object = json.loads(self.json_string)
-        self.file.close()
-
-        return self.json_object
