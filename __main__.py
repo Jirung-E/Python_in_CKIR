@@ -18,3 +18,7 @@ for e in p:
 
 p[1].makeNewCharacter("Archer")
 p[1].showInfo()
+
+for i in range(4, 10):
+    p[1].deleteCharacter(i)
+p[1].showInfo()

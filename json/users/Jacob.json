@@ -1,1 +1,61 @@
-{}
+{
+    "nickname": "Jacob",
+    "code": "#DDC8CS7Z",
+    "characters": [
+        {
+            "class": "Archer",
+            "level": 0,
+            "status": {
+                "str": 0,
+                "def": 0,
+                "int": 0,
+                "dex": 0,
+                "agi": 0
+            }
+        },
+        {
+            "class": "Archer",
+            "level": 0,
+            "status": {
+                "str": 0,
+                "def": 0,
+                "int": 0,
+                "dex": 0,
+                "agi": 0
+            }
+        },
+        {
+            "class": "Archer",
+            "level": 0,
+            "status": {
+                "str": 0,
+                "def": 0,
+                "int": 0,
+                "dex": 0,
+                "agi": 0
+            }
+        },
+        {
+            "class": "Archer",
+            "level": 0,
+            "status": {
+                "str": 0,
+                "def": 0,
+                "int": 0,
+                "dex": 0,
+                "agi": 0
+            }
+        },
+        {
+            "class": "Archer",
+            "level": 0,
+            "status": {
+                "str": 0,
+                "def": 0,
+                "int": 0,
+                "dex": 0,
+                "agi": 0
+            }
+        }
+    ]
+}
