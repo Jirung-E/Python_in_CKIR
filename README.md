@@ -60,8 +60,7 @@ Ctrl + Shift + p
 ```
 Terminus: Open Default Shell in Panel 해주면 됨
 ```
-
-  
+<https://stackoverflow.com/questions/63288592/how-to-use-git-bash-in-sublime-text-3>
   
   
   
