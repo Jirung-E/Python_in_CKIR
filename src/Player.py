@@ -8,6 +8,17 @@ def _codeGenerator():
         code = code + random.choice(alphabets)
     return code
 
+
+class Character:
+    def __init__(self, character_class):
+        self.character_class = character_class
+        self.level = 0
+        self.status = { "str": 0, "def": 0, "int":0, "dex":0, "agi": 0 }
+
+    def get(self):
+        char = { "class": self.character_class, "level": self.level, "status": self.status }
+        return char
+
 class Player:
     def __init__(self, nickname):
         self.nickname = ""
@@ -33,6 +44,9 @@ class Player:
         for e in self.characters:
             print("        ", end = '')
             print(e, end = '\n')
+
+    def makeNewCharacter(self, character_class):
+        self.characters.append(Character(character_class).get())
 
     # private member functions
     def __load(self, nickname):

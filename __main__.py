@@ -15,3 +15,6 @@ for e in users:
 for e in p:
     e.showInfo()
     print()
+
+p[1].makeNewCharacter("Archer")
+p[1].showInfo()
