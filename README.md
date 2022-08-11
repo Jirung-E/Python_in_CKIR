@@ -39,19 +39,28 @@ Preferences: Terminus Settings
 ```
 왼쪽꺼 오른쪽에 붙여 넣은 후,
 ```
-"shell_configs":
-    [
-        {
-            "name": "Git Bash",
-            "cmd": ["cmd.exe", "/k", "C:/Program Files (x86)/Git/bin/bash.exe"],
-            "env": {},
-            "enable": true,
-            "default": true,
-            "platforms": ["windows"]
-        },
-    ]
+"shell_configs": [
 ```
-중간에 이거 껴넣어줌
+이렇게 돼있는 부분 안쪽에
+```
+{
+    "name": "Git Bash",
+    "cmd": ["cmd.exe", "/k", "C:/Program Files/Git/bin/bash.exe"],
+    "env": {},
+    "enable": true,
+    "default": true,
+    "platforms": ["windows"]
+},
+```
+이거 껴넣어줌  
+이후  
+```
+Ctrl + Shift + p
+```
+```
+Terminus: Open Default Shell in Panel 해주면 됨
+```
+
   
   
   
