@@ -24,10 +24,13 @@ def test():
         p[1].deleteCharacter(i)
     p[1].showInfo()
 
-# test()
-
 def characterTest():
-    ch = Character()
-    ch.getExp(5000)
+    ch = Character("Assassin")
+    ch.showInfo()
+    ch.expUp(5000)
+    ch.showInfo()
+    for i in range(0, ch.getLevel() * 3):
+        ch.statusUp("str")
+    ch.showInfo()
 
 characterTest()
