@@ -1,4 +1,4 @@
-from .JsonManager import *
+import json
 
 
 class Users:
