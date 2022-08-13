@@ -34,8 +34,6 @@ class re_Player:
 
     def __set(self):
         self.nickname = self.__data['nickname']
-        self.code = self.__data['code']
-        self.characters = self.__data['characters']
         
     def __make(self, nickname):
         self.__data['nickname'] = nickname
@@ -49,4 +47,4 @@ class re_Player:
             json.dump(self.__data, outfile, indent=4)
 
     def __makeCode(self):
-        code = f"#{len(_users) + 1}"
+        return f"#{len(_users.get()) + 1}"
