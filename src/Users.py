@@ -1,5 +1,6 @@
 from .JsonManager import *
 
+
 class Users:
 # private constant static variables
     __path = "json/users/users.json"
@@ -8,7 +9,6 @@ class Users:
     def __init__(self):
         self.__data = None
         self.__users = None
-
 
         self.__load()
         self.__set()
@@ -19,10 +19,6 @@ class Users:
 
 
 # public member functions
-    def loadInfo(self):
-        loader = JsonManager()
-        return loader.load(self.__path)['users']
-
     def get(self):
         return self.__users
 
