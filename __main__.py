@@ -2,8 +2,8 @@ from src.Player import *
 from src.Users import *
 from src.Character import *
 
-# player = Player("Nick")
-# player.showInfo()
+from src.re_Player import *
+
 
 def test():
     users = Users().get()
@@ -53,4 +53,9 @@ def testUsers():
     print(users.getNumOfUsers())
     print(users.get())
 
-testUsers()
+# testUsers()
+
+def testRePlayer():
+    rp = re_Player("Kevin")
+
+testRePlayer()

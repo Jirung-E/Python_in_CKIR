@@ -2,11 +2,9 @@ import json
 
 
 class Users:
-# private constant static variables
-    __path = "json/users/users.json"
-
 # constructor
     def __init__(self):
+        self.__path = "json/users/users.json"
         self.__data = None
         self.__users = None
 
