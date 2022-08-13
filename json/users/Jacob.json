@@ -1,60 +1,49 @@
 {
     "nickname": "Jacob",
-    "code": "#DDC8CS7Z",
+    "code": "#SC96DTX9",
     "characters": [
         {
-            "class": "Archer",
-            "level": 0,
+            "class": "Assassin",
+            "level": 1,
             "status": {
-                "str": 0,
-                "def": 0,
-                "int": 0,
-                "dex": 0,
-                "agi": 0
+                "str": 1,
+                "def": 1,
+                "int": 1,
+                "dex": 1,
+                "agi": 1
+            }
+        },
+        {
+            "class": "Warrior",
+            "level": 1,
+            "status": {
+                "str": 1,
+                "def": 1,
+                "int": 1,
+                "dex": 1,
+                "agi": 1
+            }
+        },
+        {
+            "class": "Mage",
+            "level": 1,
+            "status": {
+                "str": 1,
+                "def": 1,
+                "int": 1,
+                "dex": 1,
+                "agi": 1
             }
         },
         {
             "class": "Archer",
-            "level": 0,
+            "level": 1,
             "status": {
-                "str": 0,
-                "def": 0,
-                "int": 0,
-                "dex": 0,
-                "agi": 0
-            }
-        },
-        {
-            "class": "Archer",
-            "level": 0,
-            "status": {
-                "str": 0,
-                "def": 0,
-                "int": 0,
-                "dex": 0,
-                "agi": 0
-            }
-        },
-        {
-            "class": "Archer",
-            "level": 0,
-            "status": {
-                "str": 0,
-                "def": 0,
-                "int": 0,
-                "dex": 0,
-                "agi": 0
-            }
-        },
-        {
-            "class": "Archer",
-            "level": 0,
-            "status": {
-                "str": 0,
-                "def": 0,
-                "int": 0,
-                "dex": 0,
-                "agi": 0
+                "str": 1,
+                "def": 1,
+                "int": 1,
+                "dex": 1,
+                "agi": 1
             }
         }
     ]

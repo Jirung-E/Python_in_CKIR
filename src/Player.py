@@ -38,7 +38,8 @@ class Player:
             print(e, end = '\n')
 
     def makeNewCharacter(self, character_class):
-        char = { "class": character_class, "level": 0, "status": { "str": 0, "def": 0, "int":0, "dex":0, "agi": 0 } }
+        c = Character(character_class)
+        char = { "class": character_class, "level": c.getLevel(), "status": c.getStatus() }
         self.characters.append(char)
 
     def deleteCharacter(self, index):

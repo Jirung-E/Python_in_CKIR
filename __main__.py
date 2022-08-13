@@ -17,7 +17,7 @@ def test():
         e.showInfo()
         print()
 
-    p[1].makeNewCharacter("Archer")
+    p[1].makeNewCharacter(random.choice(["Archer", "Warrior", "Mage", "Assassin"]))
     p[1].showInfo()
 
     for i in range(4, 10):
@@ -42,3 +42,5 @@ def playerCharacterTest():
     p.selectCharacter(1).showInfo()
 
 playerCharacterTest()
+characterTest()
+test()
