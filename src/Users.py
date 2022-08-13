@@ -1,12 +1,48 @@
 from .JsonManager import *
 
 class Users:
-    def __init__(self):
-        self.users = self.loadInfo()
+# private constant static variables
+    __path = "json/users/users.json"
 
+# constructor
+    def __init__(self):
+        self.__data = None
+        self.__users = None
+
+
+        self.__load()
+        self.__set()
+
+# destructor
+    def __del__(self):
+        self.__save()
+
+
+# public member functions
     def loadInfo(self):
         loader = JsonManager()
-        return loader.load("users/users.json")['users']
+        return loader.load(self.__path)['users']
 
     def get(self):
-        return self.users
+        return self.__users
+
+    def getNumOfUsers(self):
+        return len(self.__users)
+
+    def add(self, nickname):
+        self.__users.append(nickname)
+
+# private member functions
+    def __load(self):
+        file = open(self.__path, 'r')
+        content = file.read()
+        file.close()
+        self.__data = json.loads(content)
+
+    def __set(self):
+        self.__users = self.__data["users"]
+
+    def __save(self):
+        self.__data["users"] = self.__users
+        with open(self.__path, 'w') as outfile:
+            json.dump(self.__data, outfile, indent=4)

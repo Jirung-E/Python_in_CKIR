@@ -41,6 +41,16 @@ def playerCharacterTest():
     p.selectCharacter(0).showInfo()
     p.selectCharacter(1).showInfo()
 
-playerCharacterTest()
-characterTest()
-test()
+# playerCharacterTest()
+# characterTest()
+# test()
+
+def testUsers():
+    users = Users()
+    print(users.getNumOfUsers())
+    print(users.get())
+    users.add("Abraham")
+    print(users.getNumOfUsers())
+    print(users.get())
+
+testUsers()
