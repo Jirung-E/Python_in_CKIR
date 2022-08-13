@@ -30,6 +30,9 @@ class Users:
         return len(self.__users)
 
     def add(self, nickname):
+        for e in self.__users:
+            if e == nickname:
+                return
         self.__users.append(nickname)
 
 # private member functions
