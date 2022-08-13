@@ -10,6 +10,7 @@ class Users:
 
         self.__load()
         self.__set()
+        self.__save()
 
 # destructor
     def __del__(self):

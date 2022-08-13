@@ -57,5 +57,6 @@ def testUsers():
 
 def testRePlayer():
     rp = re_Player("Kevin")
+    n = re_Player("Nguyen")
 
 testRePlayer()

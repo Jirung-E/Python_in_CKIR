@@ -3,18 +3,18 @@ import json
 from .Users import *
 
 
-_users = Users()
-
-
 class re_Player:
     def __init__(self, nickname):
         self.__nickname = nickname
         self.__data = {}
 
+        self._users = Users()
+
         self.__path = f"json/users/{nickname}.json"
 
         self.__load()
         self.__set()
+        self.__save()
 
     def __del__(self):
         self.__save()
@@ -40,11 +40,11 @@ class re_Player:
         self.__data['code'] = self.__makeCode()
         self.__data['characters'] = []
         self.__save()
-        _users.add(nickname)
+        self._users.add(nickname)
 
     def __save(self):
         with open(self.__path, 'w') as outfile:
             json.dump(self.__data, outfile, indent=4)
 
     def __makeCode(self):
-        return f"#{len(_users.get()) + 1}"
+        return f"#{len(self._users.get()) + 1}"
