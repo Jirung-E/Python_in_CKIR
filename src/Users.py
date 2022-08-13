@@ -30,6 +30,7 @@ class Users:
             if e == nickname:
                 return
         self.__users.append(nickname)
+        self.__save()
 
 # private member functions
     def __load(self):
