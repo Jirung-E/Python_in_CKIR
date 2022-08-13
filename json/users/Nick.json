@@ -7,21 +7,21 @@
             "level": 27,
             "status": {
                 "str": 64,
-                "def": 17,
-                "int": 0,
-                "dex": 0,
-                "agi": 0
+                "def": 16,
+                "int": 1,
+                "dex": 1,
+                "agi": 1
             }
         },
         {
             "class": "Mage",
             "level": 31,
             "status": {
-                "str": 0,
-                "def": 0,
+                "str": 1,
+                "def": 1,
                 "int": 73,
-                "dex": 20,
-                "agi": 0
+                "dex": 19,
+                "agi": 1
             }
         }
     ]

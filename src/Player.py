@@ -1,5 +1,6 @@
 import random
 import json
+from .Character import *
 
 def _codeGenerator():
     alphabets = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '2', '3', '4', '5', '6', '7', '8', '9' ]
@@ -14,6 +15,7 @@ class Player:
         self.nickname = ""
         self.code = ""
         self.characters = []
+        self.character = None
 
         self.__data = {}
 
@@ -46,6 +48,11 @@ class Player:
         else :
             del self.characters[index]
             print("deleted")
+
+    def selectCharacter(self, index):
+        self.character = Character()._load(self.characters[index])
+        return self.character
+
 
     # private member functions
     def __load(self, nickname):

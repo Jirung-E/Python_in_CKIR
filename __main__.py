@@ -27,10 +27,18 @@ def test():
 def characterTest():
     ch = Character("Assassin")
     ch.showInfo()
-    ch.expUp(5000)
-    ch.showInfo()
+    ch.expUp(50000)
     for i in range(0, ch.getLevel() * 3):
         ch.statusUp("str")
+        ch.statusUp("dex")
+        ch.statusUp("def")
+        ch.statusUp("int")
+        ch.statusUp("agi")
     ch.showInfo()
 
-characterTest()
+def playerCharacterTest():
+    p = Player("Nick")
+    p.selectCharacter(0).showInfo()
+    p.selectCharacter(1).showInfo()
+
+playerCharacterTest()
