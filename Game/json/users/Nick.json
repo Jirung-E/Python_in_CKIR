@@ -5,6 +5,7 @@
         {
             "class": "Warrior",
             "level": 27,
+            "exp": 3,
             "status": {
                 "str": 64,
                 "def": 16,
@@ -16,6 +17,7 @@
         {
             "class": "Mage",
             "level": 31,
+            "exp": 56,
             "status": {
                 "str": 1,
                 "def": 1,

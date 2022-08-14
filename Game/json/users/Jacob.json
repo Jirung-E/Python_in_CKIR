@@ -1,32 +1,11 @@
 {
     "nickname": "Jacob",
-    "code": "#SC96DTX9",
+    "code": "#WEUQLJM5",
     "characters": [
         {
-            "class": "Assassin",
+            "class": "Archer",
             "level": 1,
-            "status": {
-                "str": 1,
-                "def": 1,
-                "int": 1,
-                "dex": 1,
-                "agi": 1
-            }
-        },
-        {
-            "class": "Warrior",
-            "level": 1,
-            "status": {
-                "str": 1,
-                "def": 1,
-                "int": 1,
-                "dex": 1,
-                "agi": 1
-            }
-        },
-        {
-            "class": "Mage",
-            "level": 1,
+            "exp": 0,
             "status": {
                 "str": 1,
                 "def": 1,
@@ -38,6 +17,31 @@
         {
             "class": "Archer",
             "level": 1,
+            "exp": 0,
+            "status": {
+                "str": 1,
+                "def": 1,
+                "int": 1,
+                "dex": 1,
+                "agi": 1
+            }
+        },
+        {
+            "class": "Assassin",
+            "level": 1,
+            "exp": 0,
+            "status": {
+                "str": 1,
+                "def": 1,
+                "int": 1,
+                "dex": 1,
+                "agi": 1
+            }
+        },
+        {
+            "class": "Mage",
+            "level": 1,
+            "exp": 0,
             "status": {
                 "str": 1,
                 "def": 1,

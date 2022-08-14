@@ -62,10 +62,20 @@ class Character:
     def getStatus(self):
         return self.__status
 
+    def getData(self):
+        data = {}
+        data["class"] = self.__class
+        data["level"] = self.__level
+        data["exp"] = self.__exp
+        data["status"] = self.__status
+
+        return data
+
     def _load(self, data):
         self.__class = data["class"]
         self.__level = data["level"]
         self.__limit = self.__limit + self.__limit_increase_per_level * (self.__level - 1)
+        self.__exp = data["exp"]
         self.__status['str'] = data["status"]["str"]
         self.__status['def'] = data["status"]["def"]
         self.__status['int'] = data["status"]["int"]

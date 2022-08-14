@@ -1,12 +1,16 @@
 import json
 
 from .Users import *
+from .Character import *
 
 
 class re_Player:
+# constructor
     def __init__(self, nickname):
         self.__nickname = nickname
         self.__data = {}
+        self.character = {}
+        self.__char_index = None
 
         self._users = Users()
 
@@ -16,8 +20,36 @@ class re_Player:
         self.__set()
         self.__save()
 
+# destructor
     def __del__(self):
         self.__save()
+
+
+# private member functions
+    def showInfo(self):
+        print("User Info: " + self.__nickname)
+        print("    " + self.__data["code"])
+        print("    characters:")
+        for e in self.__data["characters"]:
+            print("        ", end = '')
+            print(e, end = '\n')
+
+    def makeNewCharacter(self, character_class):
+        c = Character(character_class)
+        char = { "class": character_class, "level": c.getLevel(), "exp": 0, "status": c.getStatus() }
+        self.__data["characters"].append(char)
+
+    def deleteCharacter(self, index):
+        if index >= len(self.__data["characters"]) or index < 0:
+            print("?")
+            return
+        else :
+            del self.__data["characters"][index]
+            print("deleted")
+
+    def selectCharacter(self, index):
+        self.character = Character()._load(self.__data["characters"][index])
+        self.__char_index = index
 
 
 # private member functions
@@ -43,6 +75,8 @@ class re_Player:
         self._users.add(nickname)
 
     def __save(self):
+        if self.__char_index is not None:
+            self.__data["characters"][self.__char_index] = self.character.getData()
         with open(self.__path, 'w') as outfile:
             json.dump(self.__data, outfile, indent=4)
 

@@ -39,7 +39,7 @@ class Player:
 
     def makeNewCharacter(self, character_class):
         c = Character(character_class)
-        char = { "class": character_class, "level": c.getLevel(), "status": c.getStatus() }
+        char = { "class": character_class, "level": c.getLevel(), "exp": 0, "status": c.getStatus() }
         self.characters.append(char)
 
     def deleteCharacter(self, index):

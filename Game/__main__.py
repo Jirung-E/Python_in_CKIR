@@ -57,6 +57,16 @@ def testUsers():
 
 def testRePlayer():
     rp = re_Player("Kevin")
-    n = re_Player("Nguyen")
+
+    # rp.makeNewCharacter("Warrior")
+    rp.showInfo()
+
+    rp.selectCharacter(0)
+    rp.character.showInfo()
+    rp.character.expUp(8000)
+    for i in range(1, 100):
+        rp.character.statusUp("str")
+        rp.character.statusUp("dex")
+    rp.character.showInfo()
 
 testRePlayer()
