@@ -1,66 +1,63 @@
-import random
 import json
-from .Character import *
 
-def _codeGenerator():
-    alphabets = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '2', '3', '4', '5', '6', '7', '8', '9' ]
-    code = "#"
-    for i in range(0, 8):
-        code = code + random.choice(alphabets)
-    return code
+from .Users import *
+from .Character import *
 
 
 class Player:
+# constructor
     def __init__(self, nickname):
-        self.nickname = ""
-        self.code = ""
-        self.characters = []
-        self.character = None
-
+        self.__nickname = nickname
         self.__data = {}
+        self.character = {}
+        self.__char_index = None
+
+        self._users = Users()
 
         self.__path = f"json/users/{nickname}.json"
 
-        self.__load(nickname)
+        self.__load()
         self.__set()
+        self.__save()
 
+# destructor
     def __del__(self):
         self.__save()
-        pass
 
-    # public member functions
+
+# private member functions
     def showInfo(self):
-        print("User Info: " + self.nickname)
-        print("    " + self.code)
+        print("User Info: " + self.__nickname)
+        print("    " + self.__data["code"])
         print("    characters:")
-        for e in self.characters:
+        for e in self.__data["characters"]:
             print("        ", end = '')
             print(e, end = '\n')
 
     def makeNewCharacter(self, character_class):
         c = Character(character_class)
         char = { "class": character_class, "level": c.getLevel(), "exp": 0, "status": c.getStatus() }
-        self.characters.append(char)
+        self.__data["characters"].append(char)
 
     def deleteCharacter(self, index):
-        if index >= len(self.characters) or index < 0:
+        if index >= len(self.__data["characters"]) or index < 0:
             print("?")
             return
         else :
-            del self.characters[index]
+            del self.__data["characters"][index]
             print("deleted")
 
     def selectCharacter(self, index):
-        self.character = Character()._load(self.characters[index])
-        return self.character
+        self.character = Character()._load(self.__data["characters"][index])
+        self.__char_index = index
 
 
-    # private member functions
-    def __load(self, nickname):
+# private member functions
+    def __load(self):
         try:
             file = open(self.__path, 'r')
         except:
-            self.__make(nickname)
+            self.__make(self.__nickname)
             file = open(self.__path, 'r')
         
         content = file.read()
@@ -69,15 +66,19 @@ class Player:
 
     def __set(self):
         self.nickname = self.__data['nickname']
-        self.code = self.__data['code']
-        self.characters = self.__data['characters']
         
     def __make(self, nickname):
         self.__data['nickname'] = nickname
-        self.__data['code'] = _codeGenerator()
+        self.__data['code'] = self.__makeCode()
         self.__data['characters'] = []
         self.__save()
+        self._users.add(nickname)
 
     def __save(self):
+        if self.__char_index is not None:
+            self.__data["characters"][self.__char_index] = self.character.getData()
         with open(self.__path, 'w') as outfile:
             json.dump(self.__data, outfile, indent=4)
+
+    def __makeCode(self):
+        return f"#{len(self._users.get()) + 1}"

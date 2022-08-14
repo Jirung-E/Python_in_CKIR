@@ -1,16 +1,16 @@
 {
     "nickname": "Kevin",
-    "code": "#7",
+    "code": "#2",
     "characters": [
         {
             "class": "Warrior",
-            "level": 89,
-            "exp": 20,
+            "level": 48,
+            "exp": 10,
             "status": {
-                "str": 100,
+                "str": 72,
                 "def": 1,
                 "int": 1,
-                "dex": 100,
+                "dex": 71,
                 "agi": 1
             }
         }
