@@ -1,8 +1,5 @@
-from src.Player import *
+from src.GameManager import GameManager
 
 
-print("Hello!")
-
-p = Player("Wesley")
-p.selectCharacter(0)
-p.character.enterTheDungeon(level = 25)
+gm = GameManager()
+gm.playGame()

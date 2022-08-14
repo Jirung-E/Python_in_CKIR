@@ -60,6 +60,9 @@ class Character:
         print(f"    agi: {self.__status['agi']} \t\t | \t mana:        {self.__mana}")
         print(f"  skiil point: {self.__skill_point}")
 
+    def showSimpleInfo(self):
+        print(f"{self.__class} ({self.__level})  |  str: {self.__status['str']} def: {self.__status['def']} int: {self.__status['int']} dex: {self.__status['dex']} agi: {self.__status['agi']} ")
+
     def getStatus(self):
         return self.__status
 

@@ -1,0 +1,18 @@
+{
+    "nickname": "Paul",
+    "code": "#5",
+    "characters": [
+        {
+            "class": "Mage",
+            "level": 1,
+            "exp": 0,
+            "status": {
+                "str": 1,
+                "def": 1,
+                "int": 1,
+                "dex": 1,
+                "agi": 1
+            }
+        }
+    ]
+}

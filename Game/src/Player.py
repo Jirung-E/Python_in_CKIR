@@ -30,9 +30,13 @@ class Player:
         print("User Info: " + self.__nickname)
         print("    " + self.__data["code"])
         print("    characters:")
+        cnt = 1
         for e in self.__data["characters"]:
-            print("        ", end = '')
-            print(e, end = '\n')
+            c = Character()
+            c._load(e)
+            print(f"        {cnt}", end = '')
+            c.showSimpleInfo()
+            cnt = cnt + 1
 
     def makeNewCharacter(self, character_class):
         c = Character(character_class)
@@ -50,6 +54,9 @@ class Player:
     def selectCharacter(self, index):
         self.character = Character()._load(self.__data["characters"][index])
         self.__char_index = index
+
+    def getNumberOfCharacters(self):
+        return len(self.__data["characters"])
 
 
 # private member functions
