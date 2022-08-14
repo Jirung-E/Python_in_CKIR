@@ -1,0 +1,18 @@
+{
+    "nickname": "Wesley",
+    "code": "#3",
+    "characters": [
+        {
+            "class": "Mage",
+            "level": 63,
+            "exp": 135,
+            "status": {
+                "str": 1,
+                "def": 1,
+                "int": 125,
+                "dex": 60,
+                "agi": 1
+            }
+        }
+    ]
+}

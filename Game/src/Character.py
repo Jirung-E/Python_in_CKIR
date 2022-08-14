@@ -1,4 +1,5 @@
-import json
+import time
+import random
 
 class Character:
     def __init__(self, _class = None):
@@ -68,8 +69,60 @@ class Character:
         data["level"] = self.__level
         data["exp"] = self.__exp
         data["status"] = self.__status
-
         return data
+
+    def enterTheDungeon(self, level):
+        print("You are now Entering Dungeon", end = '')
+        for i in range(0, 3):
+            # time.sleep(1)
+            print(end = '.')
+        print("\n\n", end = '\n')
+
+        for i in range(0, random.randrange(5, 10)):
+            print("\n\n\n\n\n\n")
+            enemy = { 
+                "name": random.choice([ 'Slime', 'Rat', 'Wolf' ]), 
+                "level": random.randrange(level - 5, level + 10), 
+                "life": random.randrange(1000, 2000) }
+
+            while True:
+                print(f"You: Lv.{self.__level} {self.__class} ({self.__exp} / {self.__limit})")
+                print(f"       life: {self.__life} \t mana: {self.__mana}")
+                print("\n\n\n\n\n\n")
+                print(f"                                       Enemy: Lv.{enemy['level']} {enemy['name']}")
+                print(f"                                                life: {enemy['life']}")
+
+                print("\n\n")
+                print("  1: Attack  |  2: Status  |  Other: Run")
+                c = input()
+                if c == "1":
+                    self.__attack(enemy)
+                    if enemy['life'] <= 0:
+                        enemy["life"] = 0
+                        print(f"You: Lv.{self.__level} {self.__class}")
+                        print(f"       life: {self.__life} \t mana: {self.__mana}")
+                        print("\n\n\n\n\n\n")
+                        print(f"                                       Enemy: Lv.{enemy['level']} {enemy['name']}")
+                        print(f"                                                life: {enemy['life']}")
+
+                        print("You win!")
+                        xp = enemy["level"] * 5
+                        self.expUp(xp)
+                        break
+                elif c == "2":
+                    self.__showStatus()
+                else:
+                    self.leaveTheDungeon()
+                    return
+                print("\n\n\n\n")
+
+
+    def leaveTheDungeon(self):
+        print("You are now Leaving Dungeon", end = '')
+        for i in range(0, 3):
+            # time.sleep(1)
+            print(end = '.')
+        print(end = '\n')
 
     def _load(self, data):
         self.__class = data["class"]
@@ -106,3 +159,28 @@ class Character:
         if self.__dodge > 100:
             self.__dodge = 99.9
         self.__movement = 1 + self.__status["agi"] * 0.01
+
+    def __attack(self, enemy):
+        damage = self.__strength + self.__inteligence
+
+        cri = random.choices([True, False], weights=(self.__critical, 100 - self.__critical))[0]
+        if cri is True:
+            damage = damage * 2
+            print("Critical!")
+            
+        enemy['life'] = enemy['life'] - damage
+        print("-" + str(damage))
+
+    def __showStatus(self):
+        while True:
+            print(self.__status)
+            print("  1: Increase  |  2: Detail  |  Other: exit")
+            c = input()
+            if c == "1":
+                print(f"skill points: {self.__skill_point}")
+                st = input()
+                self.statusUp(st)
+            elif c == "2":
+                self.showInfo()
+            else:
+                break
