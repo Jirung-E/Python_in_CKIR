@@ -61,7 +61,7 @@ class Character:
         print(f"  skiil point: {self.__skill_point}")
 
     def showSimpleInfo(self):
-        print(f"{self.__class} ({self.__level})  |  str: {self.__status['str']} def: {self.__status['def']} int: {self.__status['int']} dex: {self.__status['dex']} agi: {self.__status['agi']} ")
+        print(f"{self.__class} ({self.__level}) / str: {self.__status['str']} def: {self.__status['def']} int: {self.__status['int']} dex: {self.__status['dex']} agi: {self.__status['agi']} ")
 
     def getStatus(self):
         return self.__status
@@ -74,7 +74,10 @@ class Character:
         data["status"] = self.__status
         return data
 
-    def enterTheDungeon(self, level):
+    def enterTheDungeon(self, level=None):
+        if level == None:
+            level = self.__level
+            
         print("You are now Entering Dungeon", end = '')
         for i in range(0, 3):
             # time.sleep(1)
@@ -87,6 +90,8 @@ class Character:
                 "name": random.choice([ 'Slime', 'Rat', 'Wolf' ]), 
                 "level": random.randrange(level - 5, level + 10), 
                 "life": random.randrange(1000, 2000) }
+            if enemy["level"] <= 0:
+                enemy["level"] = 1
 
             while True:
                 print(f"You: Lv.{self.__level} {self.__class} ({self.__exp} / {self.__limit})")

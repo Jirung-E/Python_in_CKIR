@@ -34,7 +34,7 @@ class Player:
         for e in self.__data["characters"]:
             c = Character()
             c._load(e)
-            print(f"        {cnt}", end = '')
+            print(f"        {cnt}: ", end = '')
             c.showSimpleInfo()
             cnt = cnt + 1
 

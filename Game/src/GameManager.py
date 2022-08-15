@@ -56,30 +56,33 @@ class GameManager:
             print("...")
             return
 
-        print("------------------------------ [ User Info ] ------------------------------")
-        self.__player.showInfo()
-        print("\n\n\n")
+        while True:
+            print("------------------------------ [ User Info ] ------------------------------")
+            self.__player.showInfo()
+            print("\n\n\n")
 
-        print("1. Play        2. Make new character")
-        key = input()
-        if key == "1":
-            if self.__player.getNumberOfCharacters() == 0:
-                print("make")
-                pass
-            else:
-                print("Choose a character to play")
+            print("1. Play        2. Make new character        Other: Exit")
+            key = input()
+            if key == "1":
+                if self.__player.getNumberOfCharacters() == 0:
+                    print("make first")
+                    pass
+                else:
+                    print("Choose a character to play")
+                    print(": ", end='')
+                    index = int(input())
+                    print("\n\n\n", end='\n')
+
+                    self.__player.selectCharacter(index-1)
+                    self.__player.character.enterTheDungeon()
+            elif key == "2":
+                print("Choose class of your character")
+                print("  Warrior    Archer    Mage    Assassin")
                 print(": ", end='')
-                index = input()
+                cls = input()
                 print("\n\n\n", end='\n')
-
-                self.__player.selectCharacter(index)
-        elif key == "2":
-            print("Choose class of your character")
-            print("  Warrior    Archer    Mage    Assassin")
-            print(": ", end='')
-            cls = input()
-            print("\n\n\n", end='\n')
-            self.__player.makeNewCharacter(cls)
-            print("Complete!")
-
-        
+                self.__player.makeNewCharacter(cls)
+                print("Complete!")
+            else:
+                print("Bye!")
+                break

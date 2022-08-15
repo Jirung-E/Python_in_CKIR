@@ -4,11 +4,11 @@
     "characters": [
         {
             "class": "Warrior",
-            "level": 27,
-            "exp": 3,
+            "level": 30,
+            "exp": 138,
             "status": {
-                "str": 64,
-                "def": 16,
+                "str": 67,
+                "def": 19,
                 "int": 1,
                 "dex": 1,
                 "agi": 1
