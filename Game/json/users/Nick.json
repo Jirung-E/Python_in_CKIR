@@ -5,8 +5,8 @@
         {
             "class": "Warrior",
             "level": 30,
-            "exp": 138,
-            "status": {
+            "exp": 178,
+            "stats": {
                 "str": 67,
                 "def": 19,
                 "int": 1,
@@ -18,23 +18,11 @@
             "class": "Mage",
             "level": 31,
             "exp": 56,
-            "status": {
+            "stats": {
                 "str": 1,
                 "def": 1,
                 "int": 73,
                 "dex": 19,
-                "agi": 1
-            }
-        },
-        {
-            "class": "q",
-            "level": 1,
-            "exp": 0,
-            "status": {
-                "str": 1,
-                "def": 1,
-                "int": 1,
-                "dex": 1,
                 "agi": 1
             }
         }

@@ -89,7 +89,9 @@ class GameManager:
                             print(f"Please enter a value between \'1\' ~ \'{self.__player.getNumberOfCharacters()}\'")
                             continue
 
-                        self.__player.character.enterTheDungeon()
+                        dungeon = Dungeon(self.__player.character.getData()['level'])
+                        dungeon.enterTheDungeon(self.__player.character)
+                        break
 
             elif key == "2":
                 print("Choose class of your character")
@@ -107,6 +109,7 @@ class GameManager:
                         continue
                     self.__player.makeNewCharacter(cls)
                     print("Complete!")
+                    break
             else:
                 print("Bye!")
                 break

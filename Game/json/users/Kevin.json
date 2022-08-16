@@ -6,7 +6,7 @@
             "class": "Warrior",
             "level": 71,
             "exp": 75,
-            "status": {
+            "stats": {
                 "str": 107,
                 "def": 1,
                 "int": 1,

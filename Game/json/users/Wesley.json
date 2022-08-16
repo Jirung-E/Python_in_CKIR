@@ -6,7 +6,7 @@
             "class": "Mage",
             "level": 63,
             "exp": 135,
-            "status": {
+            "stats": {
                 "str": 1,
                 "def": 1,
                 "int": 125,

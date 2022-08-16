@@ -6,7 +6,7 @@
             "class": "Archer",
             "level": 1,
             "exp": 0,
-            "status": {
+            "stats": {
                 "str": 1,
                 "def": 1,
                 "int": 1,

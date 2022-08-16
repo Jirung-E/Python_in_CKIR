@@ -19,6 +19,6 @@ def testPlayer():
     rp.character.showInfo()
     rp.character.expUp(8000)
     for i in range(1, 100):
-        rp.character.statusUp("str")
-        rp.character.statusUp("dex")
+        rp.character.statUp("str")
+        rp.character.statUp("dex")
     rp.character.showInfo()
