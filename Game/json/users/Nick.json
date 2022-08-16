@@ -25,6 +25,18 @@
                 "dex": 19,
                 "agi": 1
             }
+        },
+        {
+            "class": "q",
+            "level": 1,
+            "exp": 0,
+            "status": {
+                "str": 1,
+                "def": 1,
+                "int": 1,
+                "dex": 1,
+                "agi": 1
+            }
         }
     ]
 }

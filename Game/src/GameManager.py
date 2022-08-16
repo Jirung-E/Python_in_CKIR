@@ -1,6 +1,7 @@
 from .Player import *
 from .Monster import *
 from .Users import *
+from .Dungeon import *
 
 
 class GameManager:
@@ -57,32 +58,55 @@ class GameManager:
             return
 
         while True:
+            print("\n\n\n\n\n\n\n\n\n\n")
             print("------------------------------ [ User Info ] ------------------------------")
             self.__player.showInfo()
             print("\n\n\n")
 
             print("1. Play        2. Make new character        Other: Exit")
+            print(": ", end='')
             key = input()
+            print("\n\n\n", end='\n')
+
             if key == "1":
                 if self.__player.getNumberOfCharacters() == 0:
-                    print("make first")
-                    pass
+                    print("You can\'t play.")
+                    print("You need to make a character first!")
+                    continue
                 else:
-                    print("Choose a character to play")
-                    print(": ", end='')
-                    index = int(input())
-                    print("\n\n\n", end='\n')
+                    while True:
+                        print("Choose a character to play (enter \'c\' to cancel)")
+                        print(": ", end='')
+                        index = input()
+                        print("\n\n\n", end='\n')
 
-                    self.__player.selectCharacter(index-1)
-                    self.__player.character.enterTheDungeon()
+                        if index == 'c':
+                            break
+
+                        try:
+                            self.__player.selectCharacter(int(index)-1)
+                        except:
+                            print(f"Please enter a value between \'1\' ~ \'{self.__player.getNumberOfCharacters()}\'")
+                            continue
+
+                        self.__player.character.enterTheDungeon()
+
             elif key == "2":
                 print("Choose class of your character")
-                print("  Warrior    Archer    Mage    Assassin")
-                print(": ", end='')
-                cls = input()
-                print("\n\n\n", end='\n')
-                self.__player.makeNewCharacter(cls)
-                print("Complete!")
+                while True:
+                    print("  Warrior    Archer    Mage    Assassin    (enter \'c\' to cancel)")
+                    print(": ", end='')
+                    cls = input()
+                    print("\n\n\n", end='\n')
+                    if cls == 'c':
+                        break
+
+                    if cls not in [ "Warrior", "Archer", "Mage", "Assassin" ]:
+                        print("Invalid input.")
+                        print("Please enter the correct class name.")
+                        continue
+                    self.__player.makeNewCharacter(cls)
+                    print("Complete!")
             else:
                 print("Bye!")
                 break
