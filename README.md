@@ -7,6 +7,15 @@ sublime text 다운해서 쓰는중
 # GOOD BYE CKIR!!!!
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
 마이크로소프트 스토어에서 python 다운받고, vscode(or sublime text), git bash 다운받고 vscode 터미널을 git bash로 설정하고 쓰면 됨  
 
 ## vscode 기본 터미널 변경하는법  
