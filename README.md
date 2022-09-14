@@ -4,6 +4,8 @@
 sublime text 다운해서 쓰는중  
   
   
+# GOOD BYE CKIR!!!!
+  
   
 마이크로소프트 스토어에서 python 다운받고, vscode(or sublime text), git bash 다운받고 vscode 터미널을 git bash로 설정하고 쓰면 됨  
 
@@ -61,32 +63,3 @@ Ctrl + Shift + p
 Terminus: Open Default Shell in Panel 해주면 됨
 ```
 <https://stackoverflow.com/questions/63288592/how-to-use-git-bash-in-sublime-text-3>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-# 왜 vscode 다운로드 안되냐고!!!!!!!!!!!!!!!!!!!!!!!!
